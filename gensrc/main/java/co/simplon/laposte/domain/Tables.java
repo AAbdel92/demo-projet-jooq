@@ -12,7 +12,7 @@ import javax.annotation.Generated;
 
 
 /**
- * Convenience access to all tables in dbprojet
+ * Convenience access to all tables in jooqdatabase
  */
 @Generated(
     value = {
@@ -25,17 +25,17 @@ import javax.annotation.Generated;
 public class Tables {
 
     /**
-     * The table <code>dbprojet.role</code>.
+     * The table <code>jooqdatabase.role</code>.
      */
     public static final Role ROLE = co.simplon.laposte.domain.tables.Role.ROLE;
 
     /**
-     * The table <code>dbprojet.utilisateur</code>.
+     * The table <code>jooqdatabase.utilisateur</code>.
      */
     public static final Utilisateur UTILISATEUR = co.simplon.laposte.domain.tables.Utilisateur.UTILISATEUR;
 
     /**
-     * The table <code>dbprojet.utilisateur_role</code>.
+     * The table <code>jooqdatabase.utilisateur_role</code>.
      */
     public static final UtilisateurRole UTILISATEUR_ROLE = co.simplon.laposte.domain.tables.UtilisateurRole.UTILISATEUR_ROLE;
 }

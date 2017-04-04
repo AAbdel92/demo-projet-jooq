@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class Role {
 	
-	private long id;
+	private int id;
 	private String nom;
 	private Timestamp derniereMaj;
 	private List<Utilisateur> listeUtilisateurs = new ArrayList<>();

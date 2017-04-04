@@ -4,7 +4,7 @@
 package co.simplon.laposte.domain.tables;
 
 
-import co.simplon.laposte.domain.Dbprojet;
+import co.simplon.laposte.domain.Jooqdatabase;
 import co.simplon.laposte.domain.Keys;
 import co.simplon.laposte.domain.tables.records.UtilisateurRoleRecord;
 
@@ -35,10 +35,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UtilisateurRole extends TableImpl<UtilisateurRoleRecord> {
 
-    private static final long serialVersionUID = -1483038002;
+    private static final long serialVersionUID = 1537594828;
 
     /**
-     * The reference instance of <code>dbprojet.utilisateur_role</code>
+     * The reference instance of <code>jooqdatabase.utilisateur_role</code>
      */
     public static final UtilisateurRole UTILISATEUR_ROLE = new UtilisateurRole();
 
@@ -51,24 +51,24 @@ public class UtilisateurRole extends TableImpl<UtilisateurRoleRecord> {
     }
 
     /**
-     * The column <code>dbprojet.utilisateur_role.utilisateur_id</code>.
+     * The column <code>jooqdatabase.utilisateur_role.utilisateur_id</code>.
      */
     public final TableField<UtilisateurRoleRecord, Integer> UTILISATEUR_ID = createField("utilisateur_id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>dbprojet.utilisateur_role.role_id</code>.
+     * The column <code>jooqdatabase.utilisateur_role.role_id</code>.
      */
     public final TableField<UtilisateurRoleRecord, Integer> ROLE_ID = createField("role_id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * Create a <code>dbprojet.utilisateur_role</code> table reference
+     * Create a <code>jooqdatabase.utilisateur_role</code> table reference
      */
     public UtilisateurRole() {
         this("utilisateur_role", null);
     }
 
     /**
-     * Create an aliased <code>dbprojet.utilisateur_role</code> table reference
+     * Create an aliased <code>jooqdatabase.utilisateur_role</code> table reference
      */
     public UtilisateurRole(String alias) {
         this(alias, UTILISATEUR_ROLE);
@@ -87,7 +87,7 @@ public class UtilisateurRole extends TableImpl<UtilisateurRoleRecord> {
      */
     @Override
     public Schema getSchema() {
-        return Dbprojet.DBPROJET;
+        return Jooqdatabase.JOOQDATABASE;
     }
 
     /**
@@ -111,7 +111,7 @@ public class UtilisateurRole extends TableImpl<UtilisateurRoleRecord> {
      */
     @Override
     public List<ForeignKey<UtilisateurRoleRecord, ?>> getReferences() {
-        return Arrays.<ForeignKey<UtilisateurRoleRecord, ?>>asList(Keys.FK6KIFVRSFKPQN502R5IPJL5PVU, Keys.FK_UTILISATEUR_HAS_ROLE_UTILISATEUR, Keys.FKAD9WF1U7GJBX2P2Y9HS8OW39X, Keys.FK_UTILISATEUR_HAS_ROLE_ROLE1);
+        return Arrays.<ForeignKey<UtilisateurRoleRecord, ?>>asList(Keys.FK_UTILISATEUR_HAS_ROLE_UTILISATEUR, Keys.FK_UTILISATEUR_HAS_ROLE_ROLE1);
     }
 
     /**

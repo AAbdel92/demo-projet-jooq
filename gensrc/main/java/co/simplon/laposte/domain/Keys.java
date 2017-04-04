@@ -20,7 +20,7 @@ import org.jooq.impl.AbstractKeys;
 
 
 /**
- * A class modelling foreign key relationships between tables of the <code>dbprojet</code> 
+ * A class modelling foreign key relationships between tables of the <code>jooqdatabase</code> 
  * schema
  */
 @Generated(
@@ -52,9 +52,7 @@ public class Keys {
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final ForeignKey<UtilisateurRoleRecord, UtilisateurRecord> FK6KIFVRSFKPQN502R5IPJL5PVU = ForeignKeys0.FK6KIFVRSFKPQN502R5IPJL5PVU;
     public static final ForeignKey<UtilisateurRoleRecord, UtilisateurRecord> FK_UTILISATEUR_HAS_ROLE_UTILISATEUR = ForeignKeys0.FK_UTILISATEUR_HAS_ROLE_UTILISATEUR;
-    public static final ForeignKey<UtilisateurRoleRecord, RoleRecord> FKAD9WF1U7GJBX2P2Y9HS8OW39X = ForeignKeys0.FKAD9WF1U7GJBX2P2Y9HS8OW39X;
     public static final ForeignKey<UtilisateurRoleRecord, RoleRecord> FK_UTILISATEUR_HAS_ROLE_ROLE1 = ForeignKeys0.FK_UTILISATEUR_HAS_ROLE_ROLE1;
 
     // -------------------------------------------------------------------------
@@ -73,9 +71,7 @@ public class Keys {
     }
 
     private static class ForeignKeys0 extends AbstractKeys {
-        public static final ForeignKey<UtilisateurRoleRecord, UtilisateurRecord> FK6KIFVRSFKPQN502R5IPJL5PVU = createForeignKey(co.simplon.laposte.domain.Keys.KEY_UTILISATEUR_PRIMARY, UtilisateurRole.UTILISATEUR_ROLE, "FK6kifvrsfkpqn502r5ipjl5pvu", UtilisateurRole.UTILISATEUR_ROLE.UTILISATEUR_ID);
         public static final ForeignKey<UtilisateurRoleRecord, UtilisateurRecord> FK_UTILISATEUR_HAS_ROLE_UTILISATEUR = createForeignKey(co.simplon.laposte.domain.Keys.KEY_UTILISATEUR_PRIMARY, UtilisateurRole.UTILISATEUR_ROLE, "fk_utilisateur_has_role_utilisateur", UtilisateurRole.UTILISATEUR_ROLE.UTILISATEUR_ID);
-        public static final ForeignKey<UtilisateurRoleRecord, RoleRecord> FKAD9WF1U7GJBX2P2Y9HS8OW39X = createForeignKey(co.simplon.laposte.domain.Keys.KEY_ROLE_PRIMARY, UtilisateurRole.UTILISATEUR_ROLE, "FKad9wf1u7gjbx2p2y9hs8ow39x", UtilisateurRole.UTILISATEUR_ROLE.ROLE_ID);
         public static final ForeignKey<UtilisateurRoleRecord, RoleRecord> FK_UTILISATEUR_HAS_ROLE_ROLE1 = createForeignKey(co.simplon.laposte.domain.Keys.KEY_ROLE_PRIMARY, UtilisateurRole.UTILISATEUR_ROLE, "fk_utilisateur_has_role_role1", UtilisateurRole.UTILISATEUR_ROLE.ROLE_ID);
     }
 }

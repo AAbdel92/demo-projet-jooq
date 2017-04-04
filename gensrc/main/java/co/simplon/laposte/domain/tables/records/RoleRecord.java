@@ -30,45 +30,45 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class RoleRecord extends UpdatableRecordImpl<RoleRecord> implements Record3<Integer, String, Timestamp> {
 
-    private static final long serialVersionUID = -687814282;
+    private static final long serialVersionUID = -647884634;
 
     /**
-     * Setter for <code>dbprojet.role.id</code>.
+     * Setter for <code>jooqdatabase.role.id</code>.
      */
     public void setId(Integer value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>dbprojet.role.id</code>.
+     * Getter for <code>jooqdatabase.role.id</code>.
      */
     public Integer getId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>dbprojet.role.nom</code>.
+     * Setter for <code>jooqdatabase.role.nom</code>.
      */
     public void setNom(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>dbprojet.role.nom</code>.
+     * Getter for <code>jooqdatabase.role.nom</code>.
      */
     public String getNom() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>dbprojet.role.derniere_maj</code>.
+     * Setter for <code>jooqdatabase.role.derniere_maj</code>.
      */
     public void setDerniereMaj(Timestamp value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>dbprojet.role.derniere_maj</code>.
+     * Getter for <code>jooqdatabase.role.derniere_maj</code>.
      */
     public Timestamp getDerniereMaj() {
         return (Timestamp) get(2);

@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class Utilisateur {
 	
-	private long id;
+	private int id;
 	private String pseudo;
 	private String motDePasse;
 	private String email;
@@ -20,7 +20,7 @@ public class Utilisateur {
 		
 	}
 	
-	public Utilisateur(long id, String pseudo, String motDePasse, String email, Timestamp derniereMaj) {
+	public Utilisateur(int id, String pseudo, String motDePasse, String email, Timestamp derniereMaj) {
 		super();
 		this.id = id;
 		this.pseudo = pseudo;

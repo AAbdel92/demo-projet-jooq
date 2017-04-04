@@ -4,7 +4,7 @@
 package co.simplon.laposte.domain.tables;
 
 
-import co.simplon.laposte.domain.Dbprojet;
+import co.simplon.laposte.domain.Jooqdatabase;
 import co.simplon.laposte.domain.Keys;
 import co.simplon.laposte.domain.tables.records.RoleRecord;
 
@@ -36,10 +36,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Role extends TableImpl<RoleRecord> {
 
-    private static final long serialVersionUID = 1946471610;
+    private static final long serialVersionUID = 793343826;
 
     /**
-     * The reference instance of <code>dbprojet.role</code>
+     * The reference instance of <code>jooqdatabase.role</code>
      */
     public static final Role ROLE = new Role();
 
@@ -52,29 +52,29 @@ public class Role extends TableImpl<RoleRecord> {
     }
 
     /**
-     * The column <code>dbprojet.role.id</code>.
+     * The column <code>jooqdatabase.role.id</code>.
      */
     public final TableField<RoleRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>dbprojet.role.nom</code>.
+     * The column <code>jooqdatabase.role.nom</code>.
      */
     public final TableField<RoleRecord, String> NOM = createField("nom", org.jooq.impl.SQLDataType.VARCHAR.length(45), this, "");
 
     /**
-     * The column <code>dbprojet.role.derniere_maj</code>.
+     * The column <code>jooqdatabase.role.derniere_maj</code>.
      */
     public final TableField<RoleRecord, Timestamp> DERNIERE_MAJ = createField("derniere_maj", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
-     * Create a <code>dbprojet.role</code> table reference
+     * Create a <code>jooqdatabase.role</code> table reference
      */
     public Role() {
         this("role", null);
     }
 
     /**
-     * Create an aliased <code>dbprojet.role</code> table reference
+     * Create an aliased <code>jooqdatabase.role</code> table reference
      */
     public Role(String alias) {
         this(alias, ROLE);
@@ -93,7 +93,7 @@ public class Role extends TableImpl<RoleRecord> {
      */
     @Override
     public Schema getSchema() {
-        return Dbprojet.DBPROJET;
+        return Jooqdatabase.JOOQDATABASE;
     }
 
     /**

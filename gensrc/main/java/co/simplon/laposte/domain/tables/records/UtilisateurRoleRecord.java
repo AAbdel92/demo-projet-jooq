@@ -27,31 +27,31 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UtilisateurRoleRecord extends UpdatableRecordImpl<UtilisateurRoleRecord> implements Record2<Integer, Integer> {
 
-    private static final long serialVersionUID = 1662949815;
+    private static final long serialVersionUID = -1264449481;
 
     /**
-     * Setter for <code>dbprojet.utilisateur_role.utilisateur_id</code>.
+     * Setter for <code>jooqdatabase.utilisateur_role.utilisateur_id</code>.
      */
     public void setUtilisateurId(Integer value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur_role.utilisateur_id</code>.
+     * Getter for <code>jooqdatabase.utilisateur_role.utilisateur_id</code>.
      */
     public Integer getUtilisateurId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>dbprojet.utilisateur_role.role_id</code>.
+     * Setter for <code>jooqdatabase.utilisateur_role.role_id</code>.
      */
     public void setRoleId(Integer value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur_role.role_id</code>.
+     * Getter for <code>jooqdatabase.utilisateur_role.role_id</code>.
      */
     public Integer getRoleId() {
         return (Integer) get(1);

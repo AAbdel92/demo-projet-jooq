@@ -30,73 +30,73 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UtilisateurRecord extends UpdatableRecordImpl<UtilisateurRecord> implements Record5<Integer, String, String, String, Timestamp> {
 
-    private static final long serialVersionUID = -388144187;
+    private static final long serialVersionUID = 2145000133;
 
     /**
-     * Setter for <code>dbprojet.utilisateur.id</code>.
+     * Setter for <code>jooqdatabase.utilisateur.id</code>.
      */
     public void setId(Integer value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur.id</code>.
+     * Getter for <code>jooqdatabase.utilisateur.id</code>.
      */
     public Integer getId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>dbprojet.utilisateur.pseudo</code>.
+     * Setter for <code>jooqdatabase.utilisateur.pseudo</code>.
      */
     public void setPseudo(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur.pseudo</code>.
+     * Getter for <code>jooqdatabase.utilisateur.pseudo</code>.
      */
     public String getPseudo() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>dbprojet.utilisateur.mot_de_passe</code>.
+     * Setter for <code>jooqdatabase.utilisateur.mot_de_passe</code>.
      */
     public void setMotDePasse(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur.mot_de_passe</code>.
+     * Getter for <code>jooqdatabase.utilisateur.mot_de_passe</code>.
      */
     public String getMotDePasse() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>dbprojet.utilisateur.email</code>.
+     * Setter for <code>jooqdatabase.utilisateur.email</code>.
      */
     public void setEmail(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur.email</code>.
+     * Getter for <code>jooqdatabase.utilisateur.email</code>.
      */
     public String getEmail() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>dbprojet.utilisateur.derniere_maj</code>.
+     * Setter for <code>jooqdatabase.utilisateur.derniere_maj</code>.
      */
     public void setDerniereMaj(Timestamp value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>dbprojet.utilisateur.derniere_maj</code>.
+     * Getter for <code>jooqdatabase.utilisateur.derniere_maj</code>.
      */
     public Timestamp getDerniereMaj() {
         return (Timestamp) get(4);

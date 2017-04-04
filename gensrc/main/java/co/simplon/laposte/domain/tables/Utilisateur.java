@@ -4,7 +4,7 @@
 package co.simplon.laposte.domain.tables;
 
 
-import co.simplon.laposte.domain.Dbprojet;
+import co.simplon.laposte.domain.Jooqdatabase;
 import co.simplon.laposte.domain.Keys;
 import co.simplon.laposte.domain.tables.records.UtilisateurRecord;
 
@@ -36,10 +36,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Utilisateur extends TableImpl<UtilisateurRecord> {
 
-    private static final long serialVersionUID = 2067919419;
+    private static final long serialVersionUID = -1222193677;
 
     /**
-     * The reference instance of <code>dbprojet.utilisateur</code>
+     * The reference instance of <code>jooqdatabase.utilisateur</code>
      */
     public static final Utilisateur UTILISATEUR = new Utilisateur();
 
@@ -52,39 +52,39 @@ public class Utilisateur extends TableImpl<UtilisateurRecord> {
     }
 
     /**
-     * The column <code>dbprojet.utilisateur.id</code>.
+     * The column <code>jooqdatabase.utilisateur.id</code>.
      */
     public final TableField<UtilisateurRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>dbprojet.utilisateur.pseudo</code>.
+     * The column <code>jooqdatabase.utilisateur.pseudo</code>.
      */
     public final TableField<UtilisateurRecord, String> PSEUDO = createField("pseudo", org.jooq.impl.SQLDataType.VARCHAR.length(45), this, "");
 
     /**
-     * The column <code>dbprojet.utilisateur.mot_de_passe</code>.
+     * The column <code>jooqdatabase.utilisateur.mot_de_passe</code>.
      */
     public final TableField<UtilisateurRecord, String> MOT_DE_PASSE = createField("mot_de_passe", org.jooq.impl.SQLDataType.VARCHAR.length(45), this, "");
 
     /**
-     * The column <code>dbprojet.utilisateur.email</code>.
+     * The column <code>jooqdatabase.utilisateur.email</code>.
      */
     public final TableField<UtilisateurRecord, String> EMAIL = createField("email", org.jooq.impl.SQLDataType.VARCHAR.length(45), this, "");
 
     /**
-     * The column <code>dbprojet.utilisateur.derniere_maj</code>.
+     * The column <code>jooqdatabase.utilisateur.derniere_maj</code>.
      */
     public final TableField<UtilisateurRecord, Timestamp> DERNIERE_MAJ = createField("derniere_maj", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
-     * Create a <code>dbprojet.utilisateur</code> table reference
+     * Create a <code>jooqdatabase.utilisateur</code> table reference
      */
     public Utilisateur() {
         this("utilisateur", null);
     }
 
     /**
-     * Create an aliased <code>dbprojet.utilisateur</code> table reference
+     * Create an aliased <code>jooqdatabase.utilisateur</code> table reference
      */
     public Utilisateur(String alias) {
         this(alias, UTILISATEUR);
@@ -103,7 +103,7 @@ public class Utilisateur extends TableImpl<UtilisateurRecord> {
      */
     @Override
     public Schema getSchema() {
-        return Dbprojet.DBPROJET;
+        return Jooqdatabase.JOOQDATABASE;
     }
 
     /**
