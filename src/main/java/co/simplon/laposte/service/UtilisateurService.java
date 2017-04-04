@@ -34,4 +34,7 @@ public class UtilisateurService {
 	public List<Utilisateur> getUtilisateurByRole( int roleId) {
 		return dao.getUtilisateurByRole(roleId);
 	}
+	public Utilisateur insertTest(Utilisateur utilisateur) {
+		return dao.insertTest(utilisateur);
+	}
 }

@@ -1,7 +1,7 @@
 package co.simplon.laposte.dao;
 
-import static co.simplon.laposte.domain.tables.Utilisateur.UTILISATEUR;
 import static co.simplon.laposte.domain.tables.Role.ROLE;
+import static co.simplon.laposte.domain.tables.Utilisateur.UTILISATEUR;
 import static co.simplon.laposte.domain.tables.UtilisateurRole.UTILISATEUR_ROLE;
 
 import java.sql.Timestamp;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.simplon.laposte.domain.Role;
 import co.simplon.laposte.domain.Utilisateur;
 import co.simplon.laposte.domain.tables.records.UtilisateurRecord;
 
@@ -24,6 +25,35 @@ public class UtilisateurDAO {
 	
 	@Autowired
 	private DSLContext dsl;
+	
+	public Utilisateur insertTest(Utilisateur utilisateur) {
+		Timestamp derniereMaj = new Timestamp(System.currentTimeMillis());		
+		UtilisateurRecord ur = dsl.insertInto(UTILISATEUR)
+						.set(UTILISATEUR.PSEUDO, utilisateur.getPseudo())
+						.set(UTILISATEUR.MOT_DE_PASSE, utilisateur.getMotDePasse())
+						.set(UTILISATEUR.EMAIL, utilisateur.getEmail())
+						.set(UTILISATEUR.DERNIERE_MAJ, derniereMaj)
+						.returning(UTILISATEUR.ID)
+						.fetchOne();
+		utilisateur.setId(getUtilisateur(ur).getId());
+		
+		dsl.insertInto(UTILISATEUR_ROLE)
+				.set(UTILISATEUR_ROLE.UTILISATEUR_ID, utilisateur.getId())
+				.set(UTILISATEUR_ROLE.ROLE_ID, utilisateur.getListeRoles().get(0).getId())
+				.execute();
+		
+		Result<Record> rr = dsl.select()
+						.from(ROLE)
+						.join(UTILISATEUR_ROLE)
+						.on(ROLE.ID.eq(UTILISATEUR_ROLE.ROLE_ID))
+						.where(UTILISATEUR_ROLE.UTILISATEUR_ID.eq(utilisateur.getId()))
+						.fetch();
+		utilisateur.setListeRoles(new ArrayList<>());
+		for (Record record : rr) {
+			utilisateur.getListeRoles().add(getRole(record));
+		}
+		return utilisateur;
+	}
 	
 	public Utilisateur insererUtilisateur(Utilisateur utilisateur) {
 		Timestamp derniereMaj = new Timestamp(System.currentTimeMillis());
@@ -83,5 +113,12 @@ public class UtilisateurDAO {
 		String email = record.getValue(UTILISATEUR.EMAIL, String.class);
 		Timestamp derniereMaj = record.getValue(UTILISATEUR.DERNIERE_MAJ, Timestamp.class);
 		return new Utilisateur(id, pseudo, motDePasse, email, derniereMaj);
+	}
+	
+	private Role getRole(Record record) {
+		int id = record.getValue(ROLE.ID, Integer.class);
+		String nom = record.getValue(ROLE.NOM, String.class);
+		Timestamp derniereMaj = record.getValue(ROLE.DERNIERE_MAJ, Timestamp.class);
+		return new Role(id, nom, derniereMaj);
 	}
 }

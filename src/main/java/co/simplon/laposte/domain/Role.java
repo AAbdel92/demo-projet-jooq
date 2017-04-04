@@ -13,5 +13,14 @@ public class Role {
 	private String nom;
 	private Timestamp derniereMaj;
 	private List<Utilisateur> listeUtilisateurs = new ArrayList<>();
-
+	
+	public Role() {
+		
+	}
+	
+	public Role(int id, String nom, Timestamp derniereMaj) {
+		this.id = id;
+		this.nom = nom;
+		this.derniereMaj = derniereMaj;
+	}
 }

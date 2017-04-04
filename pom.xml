@@ -49,6 +49,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.2.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -87,7 +92,7 @@
                             <driver>com.mysql.jdbc.Driver</driver>
                             <url>jdbc:mysql://localhost:3306/jooqdatabase</url>
                             <user>root</user>
-                            <password></password>
+                            <password>admin</password>
                         </jdbc>
                         <generator>
                             <name>org.jooq.util.DefaultGenerator</name>
